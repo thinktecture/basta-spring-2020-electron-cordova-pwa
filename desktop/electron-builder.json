@@ -1,0 +1,7 @@
+{
+  "appId": "com.thinktecture.apps.electron",
+  "directories": {
+    "app": "dist/basta-spring-2020",
+    "output": "publish"
+  }
+}
