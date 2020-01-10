@@ -1,0 +1,22 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install top-level development-dependencies
+      run: npm install
+    - name: Install SPA dependencies and Build SPA
+      run: |
+        cd frontend
+        npm install
+        npm run build
+    - name: Build Electron App for Win32
+      run: |
+        cd ..
+        build.cmd
